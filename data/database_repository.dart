@@ -1,5 +1,6 @@
-import '../classes/news.dart';
-import '../classes/trashabc.dart';
+import '../models/cancolor.dart';
+import '../models/news.dart';
+import '../models/trash_abc.dart';
 
 abstract class DatabaseRepository {
 // Create fügt neue Daten zum ABC hinzu
@@ -9,6 +10,11 @@ abstract class DatabaseRepository {
     String text,
     String Bild,
   );
+  void addNewcanColor(
+    String color,
+    String text,
+    String picture,
+  );
 
   // erledigt hier werden neue News hmit Parametern definiert. Die Methode wird in der Mock Databes überschrieben . Ist getestet
   void addNewNews(
@@ -17,19 +23,23 @@ abstract class DatabaseRepository {
     String newstext,
     String newspicture,
   );
-  void addNewCanColorInformation(
-    String color,
-    String Text,
-    String Picture,
-  );
 
   void getallGarbageCancolorInformation(
-      String color, String text, String picture);
+    String color,
+    String text,
+    String picture,
+  );
 
 // Delete löscht einzelne Einträge
 
   List<News> getAllNews();
+  List<Cancolor> getAllcans();
 
-  void removeTrashInformation();
+  void removeTrashInformation(
+    String color,
+    String text,
+    String picture,
+  );
+
   List<Trashabc> getAllTrashInformation();
 }

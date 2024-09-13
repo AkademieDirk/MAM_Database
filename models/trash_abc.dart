@@ -5,6 +5,4 @@ class Trashabc {
 
   Trashabc(
       {required this.name, required this.explanation, required this.picture});
-
-  void showGarbageInfos() {}
 }

@@ -1,10 +1,10 @@
-// ignore_for_file: unused_field
+// ignore_for_file: unused_field, unused_local_variable
 
-import '../classes/trashabc.dart';
-import '../classes/garbagecancolor.dart';
-import '../classes/user.dart';
+import "../models/trash_abc.dart";
+import '../models/cancolor.dart';
+import '../models/user.dart';
 import 'database_repository.dart';
-import '../classes/news.dart';
+import '../models/news.dart';
 // Hier wird die Mockdatabase erstellt
 
 class MockDatabase implements DatabaseRepository {
@@ -14,16 +14,21 @@ class MockDatabase implements DatabaseRepository {
   List<User> _users = [];
   List<News> news = [];
   List<Trashabc> trash = [];
-  List<Garbagecancolor> cancolor = [];
+  List<Cancolor> cancolor = [];
 
   @override
-  void addNewCanColorInformation(String color, String text, String Picture) {
-    Garbagecancolor neueTonne = Garbagecancolor(
-      color: color,
-      text: text,
-      picture: Picture,
-    );
-    trash.add(neueTonne as Trashabc);
+  void addNewcanColor(
+    String color,
+    String text,
+    String picture,
+  ) {
+    Cancolor newcan = Cancolor(color: color, text: text, picture: picture);
+    cancolor.add(newcan);
+  }
+
+  @override
+  List<Cancolor> getAllcans() {
+    return cancolor;
   }
 
   @override
@@ -39,7 +44,11 @@ class MockDatabase implements DatabaseRepository {
   }
 
   @override
-  void addNewTrashInformation(String color, String text, String Bild) {}
+  void addNewTrashInformation(String name, String explanation, String picture) {
+    Trashabc newtrash =
+        Trashabc(name: name, explanation: explanation, picture: picture);
+    trash.add(newtrash);
+  }
 
 // hier werden die methoden aus der Mockdatabes auferufen um Informatione über die Listen abzurufen
   @override
@@ -53,13 +62,14 @@ class MockDatabase implements DatabaseRepository {
   }
 
   @override
-  void removeTrashInformation() {
-    // TODO: implement removeTrashInformation
+  void removeTrashInformation(String name, String explanation, String picture) {
+    Trashabc remove =
+        Trashabc(name: name, explanation: explanation, picture: picture);
+
+    trash.remove(remove);
   }
 
   @override
   void getallGarbageCancolorInformation(
-      String color, String text, String picture) {
-    // TODO: implement getallgarbageCancolorlinformation
-  }
+      String color, String text, String picture) {}
 }

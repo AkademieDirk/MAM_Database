@@ -1,25 +1,47 @@
 // ignore_for_file: unused_import
 
 import "dart:io";
-import "classes/user.dart";
+import "models/trash_abc.dart";
+import "models/user.dart";
 import "data/database_repository.dart";
 import "data/mock_database.dart";
 import "functions/caseabcswitch.dart";
-import "classes/trashabc.dart";
-import "classes/garbagecancolor.dart";
-import "classes/news.dart";
+
+import "models/cancolor.dart";
+import "models/news.dart";
 
 void main() {
   DatabaseRepository databaseRepository = MockDatabase();
 
-  databaseRepository.addNewCanColorInformation("rot", "fshf", "Picture");
+  Trashabc obj =
+      Trashabc(name: "name", explanation: "Test", picture: "picture");
 
+  print(obj.explanation);
+
+  // Hier werden die Methoden zum adden aufgerufen
+  // später werden noch die Variablen surch inputs ersetzt
+  databaseRepository..addNewcanColor("color", "text", "picture");
   databaseRepository.addNewNews(
       "newstitle", "newsdate", "newstext", "newspicture");
-  databaseRepository.addNewNews(
-      "newstitle2", "newsdate2", "newstext2", "newspicture2");
+  databaseRepository.addNewTrashInformation(
+      "Testname", "Testbezeichnung", "Testbild");
+  databaseRepository.addNewTrashInformation(
+      "Testname", "Testbezeichnung", "Testbild");
+
+// add new User
+
+// hier wird die remove Methode getestet fuktioniert noch nicht
+
+  databaseRepository.removeTrashInformation(
+      "Testname", "Testbezeichnung", "Testbild");
+
+// Mit den Prints wird getestet ob die Add Methoden fukktionieren
 
   print(databaseRepository.getAllNews());
+  print(databaseRepository.getAllcans());
+  print(databaseRepository.getAllTrashInformation());
+
+// Hier startet die App
 
   stdout.writeln(" Herzlich Willkomen zur Marler Müll App");
   stdout.writeln(" Sie haben die Wahl. Was möchten Sie tun? \n ");

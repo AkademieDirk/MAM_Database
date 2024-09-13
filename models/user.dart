@@ -1,6 +1,11 @@
 class User {
   String username;
-  String userpassword;
+  String password;
 
-  User({required this.username, required this.userpassword});
+  User({required this.username, required this.password});
+
+  @override
+  String toString() {
+    return "($username, ********)";
+  }
 }

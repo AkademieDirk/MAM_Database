@@ -8,7 +8,4 @@ class Cancolor {
     required this.text,
     required this.picture,
   });
-
-  void addNewCanColor(
-      {required String color, required String text, required String picture}) {}
 }
