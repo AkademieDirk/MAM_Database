@@ -1,4 +1,4 @@
-// ignore_for_file: unused_import
+// ignore_for_file: unused_import, unused_local_variable
 
 import "dart:io";
 import "models/trash_abc.dart";
@@ -44,5 +44,19 @@ void main() {
 // Hier startet die App
 
   stdout.writeln(" Herzlich Willkomen zur Marler Müll App");
-  stdout.writeln(" Sie haben die Wahl. Was möchten Sie tun? \n ");
+
+  stdout.writeln(" Sie haben die Wahl. Was möchten Sie tun? \n [L]ogin");
+  String? choice = stdin.readLineSync();
+
+  switch (choice) {
+    case "L":
+      stdout.writeln("Bitte geben Sie ihren Usernamen ein");
+      String? username = stdin.readLineSync();
+      stdout.writeln("Bitte geben Sie ihr Passwort ein");
+      String? userpassword = stdin.readLineSync();
+      if (databaseRepository.loggedincorrectly(username!, userpassword!) ==
+          true) {
+        print("jetzt gehts weiter");
+      }
+  }
 }

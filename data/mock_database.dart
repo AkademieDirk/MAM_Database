@@ -1,10 +1,11 @@
-// ignore_for_file: unused_field, unused_local_variable
+// ignore_for_file: unused_field, unused_local_variable, unused_import
 
 import "../models/trash_abc.dart";
 import '../models/cancolor.dart';
 import '../models/user.dart';
 import 'database_repository.dart';
 import '../models/news.dart';
+import "Dart:io";
 // Hier wird die Mockdatabase erstellt
 
 class MockDatabase implements DatabaseRepository {
@@ -72,4 +73,18 @@ class MockDatabase implements DatabaseRepository {
   @override
   void getallGarbageCancolorInformation(
       String color, String text, String picture) {}
+  @override
+  bool loggedincorrectly(String username, String userpassword) {
+    String expectedusername = "Dirk";
+    String expecteduserpassword = "0000";
+    bool logincorrect = false;
+
+    if (username == expectedusername && userpassword == expecteduserpassword) {
+      print("Deine Daten waren ok");
+      return logincorrect = true;
+    } else {
+      print("Deine Dateneingabe war falsch");
+      return logincorrect = false;
+    }
+  }
 }

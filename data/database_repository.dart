@@ -42,4 +42,5 @@ abstract class DatabaseRepository {
   );
 
   List<Trashabc> getAllTrashInformation();
+  bool loggedincorrectly(String username, String userpassword);
 }
