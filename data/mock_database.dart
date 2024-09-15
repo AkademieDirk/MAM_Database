@@ -44,6 +44,8 @@ class MockDatabase implements DatabaseRepository {
     news.add(newnews);
   }
 
+  // Hier wird die Methode addnewTrashinformation überschrieben. Diese befindet sich im database Repository
+  // Die Funktion fügt einen neune Eintrag zum Abffall ABC hinzu
   @override
   void addNewTrashInformation(String name, String explanation, String picture) {
     Trashabc newtrash =
@@ -73,6 +75,9 @@ class MockDatabase implements DatabaseRepository {
   @override
   void getallGarbageCancolorInformation(
       String color, String text, String picture) {}
+
+  // Das ist der klassische Log in doch müssen hier noch die erwarteten Werte aus der User list in der MockDatabase geholt werden.
+  //Ist in Arbeit
   @override
   bool loggedincorrectly(String username, String userpassword) {
     String expectedusername = "Dirk";
