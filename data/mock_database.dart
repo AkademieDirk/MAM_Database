@@ -53,7 +53,7 @@ class MockDatabase implements DatabaseRepository {
     trash.add(newtrash);
   }
 
-// hier werden die methoden aus der Mockdatabes auferufen um Informatione über die Listen abzurufen
+// hier werden die methoden aus der Mockdatabes aufgerufen um Informatione über die Listen abzurufen
   @override
   List<News> getAllNews() {
     return news;

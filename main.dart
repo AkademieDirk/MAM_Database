@@ -49,6 +49,7 @@ void main() {
   String? choice = stdin.readLineSync();
 
   switch (choice) {
+    // Hier wird die Login Methode aufgerufen aus der Database
     case "L":
       stdout.writeln("Bitte geben Sie ihren Usernamen ein");
       String? username = stdin.readLineSync();
@@ -59,4 +60,5 @@ void main() {
         print("jetzt gehts weiter");
       }
   }
+  // Hier entsteht ein neuer Case für das registrieren
 }

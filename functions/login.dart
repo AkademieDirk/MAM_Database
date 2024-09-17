@@ -1,5 +1,7 @@
 import 'dart:io';
 
+// Dies ist noch die alte Methode aus dem Unterricht
+
 bool loginUser(String expectedUserName, String expectedUserPassword) {
   bool didUserLogInCorrectly = false;
   // Benutzername und Passwort abfragen.
