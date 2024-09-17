@@ -10,6 +10,14 @@ abstract class DatabaseRepository {
     String text,
     String Bild,
   );
+
+  /// übergibt eine Tonne mit Farbe und Bild an dei Liste
+  // Eingabe: Tonnenfarenb Beschriebung und Bild
+  // Rückgabe: -
+  // EinDT: String String String(später Datentyp für Bild)
+  // RüDT: -
+  // Name: addNewCanColor
+
   void addNewcanColor(
     String color,
     String text,
@@ -17,6 +25,13 @@ abstract class DatabaseRepository {
   );
 
   // erledigt hier werden neue News hmit Parametern definiert. Die Methode wird in der Mock Databes überschrieben . Ist getestet
+  /// übergibt eine Neue News
+  // Eingabe: Nachricht mit Titel Datum  Text und Bild
+  // Rückgabe: -
+  // EinDT: String String String(später Datentyp für Bild)
+  // RüDT: -
+  // Name: addNewNews
+
   void addNewNews(
     String newstitle,
     String newsdate,
@@ -33,6 +48,7 @@ abstract class DatabaseRepository {
 // Delete löscht einzelne Einträge
 
   List<News> getAllNews();
+
   List<Cancolor> getAllcans();
 
   void removeTrashInformation(
@@ -42,5 +58,13 @@ abstract class DatabaseRepository {
   );
 
   List<Trashabc> getAllTrashInformation();
+
+  /// übergibt Benutzername un d Passwort und vergleicht diese mit der in der Liste enthaletenen Werten
+  // Eingabe: Benutzername und Passwort
+  // Rückgabe: ein Boolscher Wert des Vergleichs erfolgreich wahr
+  // EinDT: String String
+  // RüDT: bool
+  // Name: loggedincorrectly
+
   bool loggedincorrectly(String username, String userpassword);
 }
