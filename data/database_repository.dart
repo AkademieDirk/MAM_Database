@@ -39,7 +39,7 @@ abstract class DatabaseRepository {
     String newspicture,
   );
 
-  void getallGarbageCancolorInformation(
+  String? getallGarbageCancolorInformation(
     String color,
     String text,
     String picture,

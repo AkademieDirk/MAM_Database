@@ -73,7 +73,7 @@ class MockDatabase implements DatabaseRepository {
   }
 
   @override
-  void getallGarbageCancolorInformation(
+  String? getallGarbageCancolorInformation(
       String color, String text, String picture) {}
 
   // Das ist der klassische Log in doch müssen hier noch die erwarteten Werte aus der User list in der MockDatabase geholt werden.
